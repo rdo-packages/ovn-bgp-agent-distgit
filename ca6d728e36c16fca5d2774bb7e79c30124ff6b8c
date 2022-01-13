@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a15492c8_808c95fe",
+        "filename": "ovn-bgp-agent.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 283
+      },
+      "writtenOn": "2022-01-13T16:15:31Z",
+      "side": 1,
+      "message": "I\u0027m removing this",
+      "range": {
+        "startLine": 67,
+        "startChar": 15,
+        "endLine": 67,
+        "endChar": 20
+      },
+      "revId": "ca6d728e36c16fca5d2774bb7e79c30124ff6b8c",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": true
+    }
+  ]
+}
