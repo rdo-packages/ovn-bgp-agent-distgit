@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "07b7a3b7_4aca61c0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2022-01-19T15:15:10Z",
+      "side": 1,
+      "message": "fedora-review approved in https://bugzilla.redhat.com/show_bug.cgi?id\u003d2040215",
+      "revId": "fc36cac6c2d565fa88a6cc65ee3762ed4b3d5af0",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
