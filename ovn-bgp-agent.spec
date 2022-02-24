@@ -83,8 +83,16 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %install
 %py3_install
 mkdir -p %{buildroot}/%{_sysconfdir}/ovn-bgp-agent
+mkdir -p %{buildroot}%{_sysconfdir}/ovn-bgp-agent/rootwrap.d
 mkdir -p %{buildroot}/%{_unitdir}
 install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/ovn-bgp-agent.service
+
+# populate the conf dir
+mv %{buildroot}%{_prefix}/etc/ovn-bgp-agent/rootwrap.conf %{buildroot}/%{_sysconfdir}/ovn-bgp-agent/rootwrap.conf
+mv %{buildroot}%{_prefix}/etc/ovn-bgp-agent/rootwrap.d/* %{buildroot}/%{_sysconfdir}/ovn-bgp-agent/rootwrap.d/
+
+# remove duplicate config files under /usr/etc/ovn-bgp-agent
+rmdir %{buildroot}%{_prefix}/etc/ovn-bgp-agent/rootwrap.d
 
 %check
 export OS_TEST_PATH='./ovn_bgp_agent/tests/unit'
@@ -95,10 +103,14 @@ stestr-3 --test-path $OS_TEST_PATH run
 %files
 %license LICENSE
 %{_bindir}/ovn-bgp-agent
+%{_bindir}/ovn-bgp-agent-rootwrap
+%{_bindir}/ovn-bgp-agent-rootwrap-daemon
 %{_unitdir}/ovn-bgp-agent.service
 %{python3_sitelib}/ovn_bgp_agent
 %{python3_sitelib}/ovn_bgp_agent-%{upstream_version}-py%{python3_version}.egg-info
 %{_sysconfdir}/ovn-bgp-agent
+%config(noreplace) %{_sysconfdir}/ovn-bgp-agent/rootwrap.conf
+%config(noreplace) %{_sysconfdir}/ovn-bgp-agent/rootwrap.d/*
 
 %if 0%{?with_doc}
 %files doc
