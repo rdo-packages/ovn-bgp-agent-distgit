@@ -16,6 +16,24 @@
       "message": "missing / --\u003e  %{buildroot}/%{_sysconfdir}",
       "revId": "e5a87cf11d290ff3db33c61f3c0ece708617c5b4",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "82905398_5b454c08",
+        "filename": "ovn-bgp-agent.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 309
+      },
+      "writtenOn": "2022-02-24T14:18:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "12ee415b_bc75cc8f",
+      "revId": "e5a87cf11d290ff3db33c61f3c0ece708617c5b4",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
