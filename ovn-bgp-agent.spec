@@ -116,3 +116,4 @@ stestr-3 --test-path $OS_TEST_PATH run
 %systemd_postun_with_restart %{pypi_name}
 
 %changelog
+# REMOVEME: error caused by commit https://opendev.org/x/ovn-bgp-agent/commit/5f26dda1e6692b06a3379c6f0929d4c85f4fa245
