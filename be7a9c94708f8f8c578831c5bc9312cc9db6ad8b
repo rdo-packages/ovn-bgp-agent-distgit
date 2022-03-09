@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7120511c_bc2b0ab0",
+        "filename": "ovn-bgp-agent-sudoers",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2022-03-09T16:26:29Z",
+      "side": 1,
+      "message": "runs as neutron user?, then this should depend on neutron where the user is created.",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 7
+      },
+      "revId": "be7a9c94708f8f8c578831c5bc9312cc9db6ad8b",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e7d63685_ec57a4ab",
+        "filename": "ovn-bgp-agent.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2022-03-09T16:26:29Z",
+      "side": 1,
+      "message": "neutron?, i guess something like ovn-bgp-agent ?",
+      "range": {
+        "startLine": 101,
+        "startChar": 69,
+        "endLine": 101,
+        "endChar": 76
+      },
+      "revId": "be7a9c94708f8f8c578831c5bc9312cc9db6ad8b",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6eca27b7_3c4b3763",
+        "filename": "ovn-bgp-agent.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2022-03-09T16:26:29Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 120,
+        "startChar": 25,
+        "endLine": 120,
+        "endChar": 32
+      },
+      "revId": "be7a9c94708f8f8c578831c5bc9312cc9db6ad8b",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
