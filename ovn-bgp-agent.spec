@@ -11,6 +11,7 @@ License:        ASL 2.0
 URL:            https://opendev.org/x/ovn-bgp-agent
 Source0:        https://tarballs.opendev.org/x/%{name}/%{name}-%{upstream_version}.tar.gz
 Source1:        ovn-bgp-agent.service
+Source2:        ovn-bgp-agent-sudoers
 
 BuildArch:      noarch
 
@@ -23,6 +24,7 @@ BuildRequires:  python3-oslo-concurrency
 BuildRequires:  python3-oslo-config
 BuildRequires:  python3-oslo-log
 BuildRequires:  python3-oslo-privsep
+BuildRequires:  python3-oslo-rootwrap
 BuildRequires:  python3-oslo-service
 BuildRequires:  python3-oslotest
 BuildRequires:  python3-ovsdbapp
@@ -40,6 +42,7 @@ Requires:  python3-oslo-concurrency >= 3.26.0
 Requires:  python3-oslo-config >= 6.1.0
 Requires:  python3-oslo-log >= 3.36.0
 Requires:  python3-oslo-privsep >= 2.3.0
+Requires:  python3-oslo-rootwrap >= 5.15.0
 Requires:  python3-oslo-service => 1.40.2
 Requires:  python3-ovsdbapp >= 1.4.0
 Requires:  python3-pbr >= 2.0
@@ -94,11 +97,21 @@ mv %{buildroot}%{_prefix}/etc/ovn-bgp-agent/rootwrap.d/* %{buildroot}/%{_sysconf
 # remove duplicate config files under /usr/etc/ovn-bgp-agent
 rmdir %{buildroot}%{_prefix}/etc/ovn-bgp-agent/rootwrap.d
 
+# Install sudoers
+install -p -D -m 440 %{SOURCE2} %{buildroot}%{_sysconfdir}/sudoers.d/ovn-bgp-agent
+
 %check
 export OS_TEST_PATH='./ovn_bgp_agent/tests/unit'
 export PATH=$PATH:%{buildroot}/usr/bin
 export PYTHONPATH=$PWD
 stestr-3 --test-path $OS_TEST_PATH run
+
+%pre
+getent group ovn-bgp >/dev/null || groupadd -r ovn-bgp
+getent passwd ovn-bgp >/dev/null || \
+    useradd -r -g ovn-bgp -d %{_sharedstatedir}/ovn-bgp -s /sbin/nologin \
+        -c "OVN BGP Agent" ovn-bgp
+        exit 0
 
 %files
 %license LICENSE
@@ -111,6 +124,7 @@ stestr-3 --test-path $OS_TEST_PATH run
 %{_sysconfdir}/ovn-bgp-agent
 %config(noreplace) %{_sysconfdir}/ovn-bgp-agent/rootwrap.conf
 %config(noreplace) %{_sysconfdir}/ovn-bgp-agent/rootwrap.d/*
+%{_sysconfdir}/sudoers.d/ovn-bgp-agent
 
 %if 0%{?with_doc}
 %files doc
