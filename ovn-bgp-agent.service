@@ -5,7 +5,7 @@ Requires=openvswitch.service frr.service
 
 [Service]
 Type=simple
-User=root
+User=neutron
 PermissionsStartOnly=true
 ExecStart=/usr/bin/ovn-bgp-agent --config-dir /etc/ovn-bgp-agent
 PrivateTmp=false
