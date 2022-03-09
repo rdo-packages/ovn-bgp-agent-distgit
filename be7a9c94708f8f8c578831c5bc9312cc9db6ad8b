@@ -49,6 +49,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0e9b2595_c023b97d",
+        "filename": "ovn-bgp-agent.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 309
+      },
+      "writtenOn": "2022-03-09T16:28:25Z",
+      "side": 1,
+      "message": "This is because the agent will run as \"neutron\" user I believe. But will let Luis confirm this",
+      "parentUuid": "e7d63685_ec57a4ab",
+      "range": {
+        "startLine": 101,
+        "startChar": 69,
+        "endLine": 101,
+        "endChar": 76
+      },
+      "revId": "be7a9c94708f8f8c578831c5bc9312cc9db6ad8b",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6eca27b7_3c4b3763",
         "filename": "ovn-bgp-agent.spec",
         "patchSetId": 1
