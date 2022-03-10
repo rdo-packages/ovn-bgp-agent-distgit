@@ -48,6 +48,30 @@
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b47e1d9d_70bc2985",
+        "filename": "ovn-bgp-agent-sudoers",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 387
+      },
+      "writtenOn": "2022-03-10T15:47:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2299ab2e_b8f6c280",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 3,
+        "endChar": 7
+      },
+      "revId": "be7a9c94708f8f8c578831c5bc9312cc9db6ad8b",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e7d63685_ec57a4ab",
@@ -109,6 +133,30 @@
       "side": 1,
       "message": "yep, exactly, you can see the patch in tripleo-commons setting the user to neutron: https://review.opendev.org/c/openstack/tripleo-common/+/826325/5/container-images/tcib/base/ovn-bgp-agent/ovn_bgp_agent.yaml",
       "parentUuid": "0e9b2595_c023b97d",
+      "range": {
+        "startLine": 101,
+        "startChar": 69,
+        "endLine": 101,
+        "endChar": 76
+      },
+      "revId": "be7a9c94708f8f8c578831c5bc9312cc9db6ad8b",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2591635_cd525558",
+        "filename": "ovn-bgp-agent.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 387
+      },
+      "writtenOn": "2022-03-10T15:47:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6bf9044d_903a5eff",
       "range": {
         "startLine": 101,
         "startChar": 69,
