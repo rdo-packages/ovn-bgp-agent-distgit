@@ -3,8 +3,8 @@
 %{!?upstream_version: %global ovn-bgp-agent_version %{released_version}%{?milestone}}
 
 Name:           %{pypi_name}
-Version:        XXX
-Release:        XXX
+Version:        0.1.0
+Release:        1%{?dist}
 Summary:        An agent to expose routes to OVN workloads via BGP
 
 License:        ASL 2.0
@@ -142,3 +142,6 @@ getent passwd ovn-bgp >/dev/null || \
 %systemd_postun_with_restart %{pypi_name}
 
 %changelog
+* Tue Apr 19 2022 RDO <dev@lists.rdoproject.org> 0.1.0-1
+- Update to 0.1.0
+
