@@ -1,15 +1,15 @@
 %global pypi_name ovn-bgp-agent
 %global with_doc 1
-%{!?upstream_version: %global ovn-bgp-agent_version %{released_version}%{?milestone}}
+%{!?upstream_version: %global ovn-bgp-agent_version %{version}%{?milestone}}
 
 Name:           %{pypi_name}
-Version:        XXX
-Release:        XXX
+Version:        0.2.0
+Release:        1%{?dist}
 Summary:        An agent to expose routes to OVN workloads via BGP
 
 License:        ASL 2.0
 URL:            https://opendev.org/x/ovn-bgp-agent
-Source0:        https://tarballs.opendev.org/x/%{name}/%{name}-%{upstream_version}.tar.gz
+Source0:        https://opendev.org/x/%{name}/archive/%{version}.tar.gz
 Source1:        ovn-bgp-agent.service
 Source2:        ovn-bgp-agent-sudoers
 
@@ -68,7 +68,11 @@ This package contains the documentation.
 %endif
 
 %prep
+%if 0%{?dlrn} > 0
 %autosetup -n %{name}-%{upstream_version} -S git
+%else
+%autosetup -n %{name} -S git
+%endif
 # Remove bundled egg-info
 rm -rf %{pypi_name}.egg-info
 
@@ -120,7 +124,7 @@ getent passwd ovn-bgp >/dev/null || \
 %{_bindir}/ovn-bgp-agent-rootwrap-daemon
 %{_unitdir}/ovn-bgp-agent.service
 %{python3_sitelib}/ovn_bgp_agent
-%{python3_sitelib}/ovn_bgp_agent-%{upstream_version}-py%{python3_version}.egg-info
+%{python3_sitelib}/ovn_bgp_agent*-py%{python3_version}.egg-info
 %{_sysconfdir}/ovn-bgp-agent
 %config(noreplace) %{_sysconfdir}/ovn-bgp-agent/rootwrap.conf
 %config(noreplace) %{_sysconfdir}/ovn-bgp-agent/rootwrap.d/*
@@ -142,3 +146,6 @@ getent passwd ovn-bgp >/dev/null || \
 %systemd_postun_with_restart %{pypi_name}
 
 %changelog
+* Tue Apr 19 2022 RDO <dev@lists.rdoproject.org> 0.2.0-1
+- Update to 0.2.0
+
