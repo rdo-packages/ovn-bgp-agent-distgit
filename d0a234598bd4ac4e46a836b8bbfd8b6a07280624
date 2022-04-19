@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2728b3f3_5170c656",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 283
+      },
+      "writtenOn": "2022-04-19T13:48:14Z",
+      "side": 1,
+      "message": "Can we use 0.2 tag?  https://opendev.org/x/ovn-bgp-agent/src/tag/0.2.0",
+      "revId": "d0a234598bd4ac4e46a836b8bbfd8b6a07280624",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
