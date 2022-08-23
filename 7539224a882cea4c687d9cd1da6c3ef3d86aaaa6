@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4bc386de_f1e84947",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2022-08-23T13:53:59Z",
+      "side": 1,
+      "message": "Patch proposed at https://review.rdoproject.org/r/c/rdoinfo/+/44623",
+      "revId": "7539224a882cea4c687d9cd1da6c3ef3d86aaaa6",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
