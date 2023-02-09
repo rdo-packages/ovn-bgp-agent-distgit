@@ -149,3 +149,4 @@ getent passwd ovn-bgp >/dev/null || \
 
 %changelog
 # REMOVEME: error caused by commit https://opendev.org/x/ovn-bgp-agent/commit/7dcf472c8b8052379da1179b73d76c5c14794e55
+# REMOVEME: error caused by commit https://opendev.org/x/ovn-bgp-agent/commit/7be516a06fe47f9a79b7f4a819bda7c069165eff
