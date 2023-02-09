@@ -32,6 +32,7 @@ BuildRequires:  python3-pbr
 BuildRequires:  python3-pyroute2
 BuildRequires:  python3-stestr
 BuildRequires:  python3-stevedore
+BuildRequires:  python3-tenacity >= 4.4.0
 BuildRequires:  python3-testtools
 %if 0%{?rhel} == 8
 BuildRequires:  python3-dataclasses
@@ -52,6 +53,7 @@ Requires:  python3-pbr >= 2.0
 Requires:  python3-pyroute2 >= 0.6.4
 Requires:  python3-stevedore >= 1.20.0
 Requires:  python3-openvswitch >= 2.8.0
+Requires:  python3-tenacity >= 6.0.0
 %if 0%{?rhel} == 8
 Requires:  python3-dataclasses
 %endif
@@ -149,3 +151,4 @@ getent passwd ovn-bgp >/dev/null || \
 
 %changelog
 # REMOVEME: error caused by commit https://opendev.org/x/ovn-bgp-agent/commit/7dcf472c8b8052379da1179b73d76c5c14794e55
+# REMOVEME: error caused by commit https://opendev.org/x/ovn-bgp-agent/commit/7be516a06fe47f9a79b7f4a819bda7c069165eff
