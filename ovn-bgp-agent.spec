@@ -33,6 +33,7 @@ BuildRequires:  python3-pyroute2
 BuildRequires:  python3-stestr
 BuildRequires:  python3-stevedore
 BuildRequires:  python3-testtools
+BuildRequires:  python3-tenacity >= 4.4.0
 %if 0%{?rhel} == 8
 BuildRequires:  python3-dataclasses
 %endif
@@ -51,6 +52,7 @@ Requires:  python3-ovsdbapp >= 1.4.0
 Requires:  python3-pbr >= 2.0
 Requires:  python3-pyroute2 >= 0.6.4
 Requires:  python3-stevedore >= 1.20.0
+Requires:  python3-tenacity >= 6.0.0
 Requires:  python3-openvswitch >= 2.8.0
 %if 0%{?rhel} == 8
 Requires:  python3-dataclasses
