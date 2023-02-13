@@ -16,6 +16,29 @@
       "message": "should be also updated upstream as rdo should match the upstream specification",
       "revId": "beb0226e6c2531247b810c7cc82909e01455429e",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c1c4e883_fe4b2f46",
+        "filename": "ovn-bgp-agent.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2023-02-13T12:06:02Z",
+      "side": 1,
+      "message": "it should match what is in requirements.txt.\n\nAlso, commit message is confusing, the purpose of this review should be to match what is in requirements.txt, not neutron",
+      "range": {
+        "startLine": 50,
+        "startChar": 31,
+        "endLine": 50,
+        "endChar": 36
+      },
+      "revId": "beb0226e6c2531247b810c7cc82909e01455429e",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
