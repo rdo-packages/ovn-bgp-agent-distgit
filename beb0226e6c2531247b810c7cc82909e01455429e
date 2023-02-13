@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5fad523f_7550fc16",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2023-02-13T11:57:18Z",
+      "side": 1,
+      "message": "should be also updated upstream as rdo should match the upstream specification",
+      "revId": "beb0226e6c2531247b810c7cc82909e01455429e",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
