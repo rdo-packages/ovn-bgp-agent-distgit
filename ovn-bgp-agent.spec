@@ -150,3 +150,4 @@ getent passwd ovn-bgp >/dev/null || \
 %systemd_postun_with_restart %{pypi_name}
 
 %changelog
+# REMOVEME: error caused by commit https://opendev.org/openstack/ovn-bgp-agent/commit/cb3b57689bfdebef2da9e356112db733292b57fb
