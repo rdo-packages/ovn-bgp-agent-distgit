@@ -8,8 +8,8 @@ Release:        XXX
 Summary:        An agent to expose routes to OVN workloads via BGP
 
 License:        ASL 2.0
-URL:            https://opendev.org/x/ovn-bgp-agent
-Source0:        https://tarballs.opendev.org/x/%{name}/%{name}-%{upstream_version}.tar.gz
+URL:            https://opendev.org/openstack/ovn-bgp-agent
+Source0:        https://tarballs.opendev.org/openstack/%{name}/%{name}-%{upstream_version}.tar.gz
 Source1:        ovn-bgp-agent.service
 Source2:        ovn-bgp-agent-sudoers
 
