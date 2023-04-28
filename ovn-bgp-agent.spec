@@ -157,3 +157,4 @@ getent passwd ovn-bgp >/dev/null || \
 * Tue Apr 19 2022 RDO <dev@lists.rdoproject.org> 0.2.0-1
 - Update to 0.2.0
 
+# REMOVEME: error caused by commit https://opendev.org/openstack/ovn-bgp-agent/commit/cb3b57689bfdebef2da9e356112db733292b57fb
