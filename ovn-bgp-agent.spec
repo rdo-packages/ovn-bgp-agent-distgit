@@ -1,6 +1,8 @@
+%{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
+%global sources_gpg_sign 0x815AFEC729392386480E076DCC0DFE2D21C023C9
 %global pypi_name ovn-bgp-agent
 %global with_doc 1
-%{!?upstream_version: %global ovn-bgp-agent_version %{released_version}%{?milestone}}
+%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           %{pypi_name}
 Version:        XXX
@@ -11,10 +13,21 @@ Summary:        An agent to expose routes to OVN workloads via BGP
 License:        ASL 2.0
 URL:            https://opendev.org/openstack/ovn-bgp-agent
 Source0:        https://tarballs.opendev.org/openstack/%{name}/%{name}-%{upstream_version}.tar.gz
+# Required for tarball sources verification
+%if 0%{?sources_gpg} == 1
+Source101:      https://tarballs.opendev.org/openstack/%{name}/%{name}-%{upstream_version}.tar.gz.asc
+Source102:      https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
+%endif
+
 Source1:        ovn-bgp-agent.service
 Source2:        ovn-bgp-agent-sudoers
 
 BuildArch:      noarch
+
+# Required for tarball sources verification
+%if 0%{?sources_gpg} == 1
+BuildRequires:  /usr/bin/gpgv2
+%endif
 
 BuildRequires:  git-core
 BuildRequires:  python3-jinja2
