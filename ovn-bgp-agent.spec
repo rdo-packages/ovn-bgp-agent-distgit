@@ -1,19 +1,36 @@
+%{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
+%global sources_gpg_sign 0x815AFEC729392386480E076DCC0DFE2D21C023C9
+%global milestone .0b1
 %global pypi_name ovn-bgp-agent
 %global with_doc 1
-%{!?upstream_version: %global ovn-bgp-agent_version %{released_version}%{?milestone}}
+%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           %{pypi_name}
-Version:        XXX
-Release:        XXX
+Version:        1.0.0
+Release:        0.1%{?milestone}%{?dist}
 Summary:        An agent to expose routes to OVN workloads via BGP
 
 License:        ASL 2.0
 URL:            https://opendev.org/openstack/ovn-bgp-agent
 Source0:        https://tarballs.opendev.org/openstack/%{name}/%{name}-%{upstream_version}.tar.gz
+# Required for tarball sources verification
+%if 0%{?sources_gpg} == 1
+Source101:      https://tarballs.opendev.org/openstack/%{name}/%{name}-%{upstream_version}.tar.gz.asc
+Source102:      https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
+%endif
+#
+# patches_base=1.0.0.0b1
+#
+
 Source1:        ovn-bgp-agent.service
 Source2:        ovn-bgp-agent-sudoers
 
 BuildArch:      noarch
+
+# Required for tarball sources verification
+%if 0%{?sources_gpg} == 1
+BuildRequires:  /usr/bin/gpgv2
+%endif
 
 BuildRequires:  git-core
 BuildRequires:  python3-jinja2
@@ -70,6 +87,10 @@ This package contains the documentation.
 %endif
 
 %prep
+# Required for tarball sources verification
+%if 0%{?sources_gpg} == 1
+%{gpgverify}  --keyring=%{SOURCE102} --signature=%{SOURCE101} --data=%{SOURCE0}
+%endif
 %autosetup -n %{name}-%{upstream_version} -S git
 # Remove bundled egg-info
 rm -rf %{pypi_name}.egg-info
@@ -144,3 +165,6 @@ getent passwd ovn-bgp >/dev/null || \
 %systemd_postun_with_restart %{pypi_name}
 
 %changelog
+* Tue Sep 12 2023 RDO <dev@lists.rdoproject.org> 1.0.0-0.1.0b1
+- Update to 1.0.0.0b1
+
