@@ -7,6 +7,7 @@
 Name:           %{pypi_name}
 Version:        1.0.0
 Release:        1%{?dist}
+Epoch:          1
 Summary:        An agent to expose routes to OVN workloads via BGP
 
 License:        ASL 2.0
