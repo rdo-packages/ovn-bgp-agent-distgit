@@ -1,0 +1,8 @@
+Code-Review+2: Luis Tomas Bolivar <luis5tb@gmail.com>
+Verified+2: Zuul CI <zuul@review.rdoproject.org>
+Workflow+1: Luis Tomas Bolivar <luis5tb@gmail.com>
+Submitted-by: Zuul CI <zuul@review.rdoproject.org>
+Submitted-at: Wed, 15 Nov 2023 14:16:30 +0000
+Reviewed-on: https://review.rdoproject.org/r/c/openstack/ovn-bgp-agent-distgit/+/48415
+Project: openstack/ovn-bgp-agent-distgit
+Branch: refs/heads/zed-rdo
