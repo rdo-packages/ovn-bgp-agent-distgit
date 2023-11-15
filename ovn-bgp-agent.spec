@@ -156,4 +156,3 @@ getent passwd ovn-bgp >/dev/null || \
 %changelog
 * Tue Apr 19 2022 RDO <dev@lists.rdoproject.org> 0.2.0-1
 - Update to 0.2.0
-
