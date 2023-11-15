@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x815AFEC729392386480E076DCC0DFE2D21C023C9
+%global sources_gpg_sign 0x815afec729392386480e076dcc0dfe2d21c023c9
 %global pypi_name ovn-bgp-agent
 %global with_doc 1
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
@@ -58,7 +58,7 @@ Requires:  python3-oslo-log >= 3.36.0
 Requires:  python3-oslo-privsep >= 2.3.0
 Requires:  python3-oslo-rootwrap >= 5.15.0
 Requires:  python3-oslo-service => 1.40.2
-Requires:  python3-ovsdbapp >= 1.4.0
+Requires:  python3-ovsdbapp >= 1.16.0
 Requires:  python3-pbr >= 2.0
 Requires:  python3-pyroute2 >= 0.6.6
 Requires:  python3-stevedore >= 1.20.0
