@@ -1,0 +1,10 @@
+Code-Review+2: Joel Capitao <jcapitao@redhat.com>
+Verified+2: Zuul CI <zuul@review.rdoproject.org>
+Code-Review+2: Luis Tomas Bolivar <luis5tb@gmail.com>
+Code-Review+1: Karolina Kula <kkula@redhat.com>
+Workflow+1: Alfredo Moralejo <amoralej@redhat.com>
+Submitted-by: Zuul CI <zuul@review.rdoproject.org>
+Submitted-at: Wed, 15 Nov 2023 17:55:22 +0000
+Reviewed-on: https://review.rdoproject.org/r/c/openstack/ovn-bgp-agent-distgit/+/50818
+Project: openstack/ovn-bgp-agent-distgit
+Branch: refs/heads/rpm-master
