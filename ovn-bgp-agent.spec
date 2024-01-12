@@ -88,17 +88,18 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 
 %install
 %py3_install
+
+PYTHONPATH="%{buildroot}/%{python3_sitelib}" oslo-config-generator --config-file=etc/oslo-config-generator/bgp-agent.conf
+
 mkdir -p %{buildroot}/%{_sysconfdir}/ovn-bgp-agent
 mkdir -p %{buildroot}/%{_sysconfdir}/ovn-bgp-agent/rootwrap.d
 mkdir -p %{buildroot}/%{_unitdir}
 install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/ovn-bgp-agent.service
 
 # populate the conf dir
-mv %{buildroot}%{_prefix}/etc/ovn-bgp-agent/rootwrap.conf %{buildroot}/%{_sysconfdir}/ovn-bgp-agent/rootwrap.conf
-mv %{buildroot}%{_prefix}/etc/ovn-bgp-agent/rootwrap.d/* %{buildroot}/%{_sysconfdir}/ovn-bgp-agent/rootwrap.d/
-
-# remove duplicate config files under /usr/etc/ovn-bgp-agent
-rmdir %{buildroot}%{_prefix}/etc/ovn-bgp-agent/rootwrap.d
+mv %{buildroot}/etc/ovn-bgp-agent/bgp-agent.conf.sample %{buildroot}/%{_sysconfdir}/ovn-bgp-agent/bgp-agent.conf
+mv %{buildroot}/etc/ovn-bgp-agent/rootwrap.conf %{buildroot}/%{_sysconfdir}/ovn-bgp-agent/rootwrap.conf
+mv %{buildroot}/etc/ovn-bgp-agent/rootwrap.d/* %{buildroot}/%{_sysconfdir}/ovn-bgp-agent/rootwrap.d/
 
 # Install sudoers
 install -p -D -m 440 %{SOURCE2} %{buildroot}%{_sysconfdir}/sudoers.d/ovn-bgp-agent
@@ -125,6 +126,7 @@ getent passwd ovn-bgp >/dev/null || \
 %{python3_sitelib}/ovn_bgp_agent
 %{python3_sitelib}/ovn_bgp_agent-%{upstream_version}-py%{python3_version}.egg-info
 %{_sysconfdir}/ovn-bgp-agent
+%config(noreplace) %{_sysconfdir}/ovn-bgp-agent/bgp-agent.conf
 %config(noreplace) %{_sysconfdir}/ovn-bgp-agent/rootwrap.conf
 %config(noreplace) %{_sysconfdir}/ovn-bgp-agent/rootwrap.d/*
 %{_sysconfdir}/sudoers.d/ovn-bgp-agent
