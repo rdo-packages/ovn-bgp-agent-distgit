@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "31a75b8a_7f928189",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2024-03-28T14:31:17Z",
+      "side": 1,
+      "message": "https://tarballs.opendev.org/openstack/ovn-bgp-agent/ovn-bgp-agent-2.0.0.0rc2.tar.gz not available yet",
+      "revId": "9e3cd88fbe5cffe312d82faea0fafe9bee7c38c4",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
