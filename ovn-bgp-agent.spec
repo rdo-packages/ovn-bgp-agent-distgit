@@ -3,6 +3,8 @@
 %global pypi_name ovn-bgp-agent
 %global with_doc 1
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+%{?dlrn: %global tarsources ovn-bgp-agent}
+%{!?dlrn: %global tarsources ovn_bgp_agent}
 
 Name:           %{pypi_name}
 Version:        XXX
@@ -12,10 +14,10 @@ Summary:        An agent to expose routes to OVN workloads via BGP
 
 License:        ASL 2.0
 URL:            https://opendev.org/openstack/ovn-bgp-agent
-Source0:        https://tarballs.opendev.org/openstack/%{name}/%{name}-%{upstream_version}.tar.gz
+Source0:        https://tarballs.opendev.org/openstack/%{name}/%{tarsources}-%{upstream_version}.tar.gz
 # Required for tarball sources verification
 %if 0%{?sources_gpg} == 1
-Source101:      https://tarballs.opendev.org/openstack/%{name}/%{name}-%{upstream_version}.tar.gz.asc
+Source101:      https://tarballs.opendev.org/openstack/%{name}/%{tarsources}-%{upstream_version}.tar.gz.asc
 Source102:      https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
 %endif
 
@@ -84,7 +86,7 @@ This package contains the documentation.
 %endif
 
 %prep
-%autosetup -n %{name}-%{upstream_version} -S git
+%autosetup -n %{tarsources}-%{upstream_version} -S git
 # Remove bundled egg-info
 rm -rf %{pypi_name}.egg-info
 
