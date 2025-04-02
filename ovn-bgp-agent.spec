@@ -1,4 +1,3 @@
-%global milestone .0rc1
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
 %global sources_gpg_sign 0x22284f69d9eccdf3df7819791c711af193ff8e54
 %global pypi_name ovn-bgp-agent
@@ -9,15 +8,13 @@
 
 Name:           %{pypi_name}
 Version:        4.0.0
-Release:        0.1%{?milestone}%{?dist}
+Release:        1%{?dist}
 Epoch:          1
 Summary:        An agent to expose routes to OVN workloads via BGP
 
 License:        ASL 2.0
 URL:            https://opendev.org/openstack/ovn-bgp-agent
 Source0:        https://tarballs.opendev.org/openstack/%{name}/%{tarsources}-%{upstream_version}.tar.gz
-#
-# patches_base=4.0.0.0rc1
 #
 
 # Required for tarball sources verification
@@ -171,6 +168,9 @@ getent passwd ovn-bgp >/dev/null || \
 %systemd_postun_with_restart %{pypi_name}
 
 %changelog
+* Wed Apr 02 2025 RDO <dev@lists.rdoproject.org> 1:4.0.0-1
+- Update to 4.0.0
+
 * Mon Mar 17 2025 RDO <dev@lists.rdoproject.org> 1:4.0.0-0.1.0rc1
 - Update to 4.0.0.0rc1
 
