@@ -40,7 +40,6 @@ BuildRequires:  python3-oslo-concurrency
 BuildRequires:  python3-oslo-config
 BuildRequires:  python3-oslo-log
 BuildRequires:  python3-oslo-privsep
-BuildRequires:  python3-oslo-rootwrap
 BuildRequires:  python3-oslo-service
 BuildRequires:  python3-oslotest
 BuildRequires:  python3-ovsdbapp
@@ -59,7 +58,6 @@ Requires:  python3-oslo-concurrency >= 3.26.0
 Requires:  python3-oslo-config >= 6.1.0
 Requires:  python3-oslo-log >= 3.36.0
 Requires:  python3-oslo-privsep >= 2.3.0
-Requires:  python3-oslo-rootwrap >= 5.15.0
 Requires:  python3-oslo-service => 1.40.2
 Requires:  python3-ovsdbapp >= 1.16.0
 Requires:  python3-pbr >= 2.0
@@ -107,18 +105,10 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 PYTHONPATH="%{buildroot}/%{python3_sitelib}" oslo-config-generator --config-file=etc/oslo-config-generator/bgp-agent.conf
 
 mkdir -p %{buildroot}/%{_sysconfdir}/ovn-bgp-agent
-mkdir -p %{buildroot}/%{_sysconfdir}/ovn-bgp-agent/rootwrap.d
 mkdir -p %{buildroot}/%{_unitdir}
 install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/ovn-bgp-agent.service
 
 install -p -D -m 640 etc/ovn-bgp-agent/bgp-agent.conf.sample %{buildroot}/%{_sysconfdir}/ovn-bgp-agent/bgp-agent.conf
-
-# populate the conf dir
-mv %{buildroot}%{_prefix}/etc/ovn-bgp-agent/rootwrap.conf %{buildroot}/%{_sysconfdir}/ovn-bgp-agent/rootwrap.conf
-mv %{buildroot}%{_prefix}/etc/ovn-bgp-agent/rootwrap.d/* %{buildroot}/%{_sysconfdir}/ovn-bgp-agent/rootwrap.d/
-
-# remove duplicate config files under /usr/etc/ovn-bgp-agent
-rmdir %{buildroot}%{_prefix}/etc/ovn-bgp-agent/rootwrap.d
 
 # Install sudoers
 install -p -D -m 440 %{SOURCE2} %{buildroot}%{_sysconfdir}/sudoers.d/ovn-bgp-agent
@@ -139,15 +129,11 @@ getent passwd ovn-bgp >/dev/null || \
 %files
 %license LICENSE
 %{_bindir}/ovn-bgp-agent
-%{_bindir}/ovn-bgp-agent-rootwrap
-%{_bindir}/ovn-bgp-agent-rootwrap-daemon
 %{_unitdir}/ovn-bgp-agent.service
 %{python3_sitelib}/ovn_bgp_agent
 %{python3_sitelib}/ovn_bgp_agent-%{upstream_version}-py%{python3_version}.egg-info
 %{_sysconfdir}/ovn-bgp-agent
 %config(noreplace) %{_sysconfdir}/ovn-bgp-agent/bgp-agent.conf
-%config(noreplace) %{_sysconfdir}/ovn-bgp-agent/rootwrap.conf
-%config(noreplace) %{_sysconfdir}/ovn-bgp-agent/rootwrap.d/*
 %{_sysconfdir}/sudoers.d/ovn-bgp-agent
 
 %if 0%{?with_doc}
