@@ -16,6 +16,23 @@
       "message": "recheck \"Could not find a suitable TLS CA certificate bundle\"",
       "revId": "7a89f461b95c44dd6a7c198dcbeb2a558cfe7cee",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "601553d1_7eade93e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 197
+      },
+      "writtenOn": "2025-05-05T14:20:54Z",
+      "side": 1,
+      "message": "DEBUG: + oslo-config-generator --config-file\u003detc/oslo-config-generator/bgp-agent.conf\nDEBUG: Traceback (most recent call last):\nDEBUG:   File \"/usr/bin/oslo-config-generator\", line 8, in \u003cmodule\u003e\nDEBUG:     sys.exit(main())\nDEBUG:   File \"/usr/lib/python3.9/site-packages/oslo_config/generator.py\", line 831, in main\nDEBUG:     generate(conf)\nDEBUG:   File \"/usr/lib/python3.9/site-packages/oslo_config/generator.py\", line 787, in generate\nDEBUG:     output_file \u003d open(conf.output_file, \u0027w\u0027)\nDEBUG: FileNotFoundError: [Errno 2] No such file or directory: \u0027etc/ovn-bgp-agent/bgp-agent.conf.sample\u0027",
+      "revId": "7a89f461b95c44dd6a7c198dcbeb2a558cfe7cee",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
