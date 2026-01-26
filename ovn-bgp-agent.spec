@@ -1,11 +1,11 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0xf8675126e2411e7748dd46662fc2093e4682645f
+%global sources_gpg_sign 0x22284f69d9eccdf3df7819791c711af193ff8e54
 %global pypi_name ovn-bgp-agent
 %global with_doc 1
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           %{pypi_name}
-Version:        3.0.0
+Version:        3.0.1
 Release:        1%{?dist}
 Epoch:          1
 Summary:        An agent to expose routes to OVN workloads via BGP
@@ -166,6 +166,9 @@ getent passwd ovn-bgp >/dev/null || \
 %systemd_postun_with_restart %{pypi_name}
 
 %changelog
+* Mon Jan 26 2026 RDO <dev@lists.rdoproject.org> 1:3.0.1-1
+- Update to 3.0.1
+
 * Wed Oct 02 2024 RDO <dev@lists.rdoproject.org> 1:3.0.0-1
 - Update to 3.0.0
 
