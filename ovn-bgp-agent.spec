@@ -7,7 +7,7 @@
 %{!?dlrn: %global tarsources ovn_bgp_agent}
 
 Name:           %{pypi_name}
-Version:        4.0.0
+Version:        4.0.1
 Release:        1%{?dist}
 Epoch:          1
 Summary:        An agent to expose routes to OVN workloads via BGP
@@ -168,6 +168,9 @@ getent passwd ovn-bgp >/dev/null || \
 %systemd_postun_with_restart %{pypi_name}
 
 %changelog
+* Tue Jul 21 2026 RDO <dev@lists.rdoproject.org> 1:4.0.1-1
+- Update to 4.0.1
+
 * Wed Apr 02 2025 RDO <dev@lists.rdoproject.org> 1:4.0.0-1
 - Update to 4.0.0
 
